@@ -101,11 +101,9 @@ When building the classes of a html node dynamically, you can use a JavaScript e
 Example:
 ```javascript
 function render(oRenderManager) {
-    oRenderManager.render(
-        <div class="bold red">Plain</div>
-        <div class={ ["bold", "red"] }>With Array</div>
-        <div class={ { bold: true, red: true } }>With Object</div>
-    );
+    oRenderManager.render(<div class="bold red">Plain</div>);
+    oRenderManager.render(<div class={ ["bold", "red"] }>With Array</div>);
+    oRenderManager.render(<div class={ { bold: true, red: true } }>With Object</div>);
 }
 ```
 #### Styles
@@ -116,11 +114,9 @@ When building the style of a html node dynamically, you can use a JavaScript exp
 Example:
 ```javascript
 function render(oRenderManager) {
-    oRenderManager.render(
-        <div style="color: red">Plain</div>
-        <div style={ [{name: "color", value: "red"}] }>With Array</div>
-        <div style={ { color: "red" } }>With Object</div>
-    );
+    oRenderManager.render(<div style="color: red">Plain</div>);
+    oRenderManager.render(<div style={ [{name: "color", value: "red"}] }>With Array</div>);
+    oRenderManager.render(<div style={ { color: "red" } }>With Object</div>);
 }
 ```
 ### UI5-specific constructs 
