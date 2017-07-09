@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SAPUI5</title>
+    <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+        id="sap-ui-bootstrap"
+        data-sap-ui-bindingSyntax="complex"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-preload="async"
+        data-sap-ui-libs="sample.controls"
+        data-sap-ui-resourceroots='{"sample.controls": "./dist"}'></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css">
+
+    <script id="sampleView" type="ui5/xmlview">
+        <mvc:View controllerName="sample.SampleController" xmlns="sample.controls"
+            xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
+
+            <Hero title="JSX Controls" subtitle="Using the Bulma library"
+                color="{/hero/color}" size="{/hero/size}">
+                <headerNavItems>
+                    <core:Item text="Home" />
+                    <core:Item text="Examples" />
+                    <core:Item text="Documentation" />
+                </headerNavItems>
+                <footerNavItems>
+                    <core:Item text="Overview" />
+                    <core:Item text="Modifiers" />
+                    <core:Item text="Grid" />
+                    <core:Item text="Elements" />
+                    <core:Item text="Components" />
+                </footerNavItems>
+            </Hero>
+            <Form class="sapUiSmallMarginTopBottom">
+                <FormElement label="Hero Color">
+                    <Select selectedKey="{/hero/color}" items="{/hero/domain/color}">
+                        <core:Item text="{name}" key="{name}" />
+                    </Select>
+                </FormElement>
+                <FormElement label="Hero Size">
+                    <Select selectedKey="{/hero/size}" items="{/hero/domain/size}">
+                        <core:Item text="{name}" key="{name}" />
+                    </Select>
+                </FormElement>
+            </Form>
+            <Footer />
+        </mvc:View>
+    </script>
+    <script>
+        function stringMapToArray(map) {
+            return jQuery.map(map, function(name) {
+                return {name};
+            });
+        }
+
+        sap.ui.getCore().attachInit(function() {
+            "use strict";
+            sap.ui.require([
+                "sap/ui/model/json/JSONModel",
+                "sample/controls/library"
+            ], function(JSONModel, library) {
+                sap.ui.controller("sample.SampleController", {
+                    onInit: function() {
+                        this.getView().setModel(new JSONModel({
+                            hero: {
+                                color: "Primary",
+                                size: "Medium",
+                                domain: {
+                                    color: stringMapToArray(library.Color),
+                                    size: stringMapToArray(library.HeroSize)
+                                }
+                            }
+                        }));
+                    }
+                });
+
+                sap.ui.xmlview({
+                    viewContent: jQuery("#sampleView").html()
+                }).placeAt(window.document.body);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+</body>
+</html>

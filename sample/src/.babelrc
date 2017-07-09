@@ -1,0 +1,4 @@
+{
+    "presets": ["env"],
+    "plugins": ["spet-ui5-jsx-rm"]
+}

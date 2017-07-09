@@ -1,0 +1,34 @@
+{
+  "name": "spet-ui5-jsx-rm",
+  "version": "0.0.1",
+  "description": "Babel plugin for converting JSX to UI5 render manager calls.",
+  "main": "src/index.js",
+  "author": "Serban Petrescu",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "jest --coverage",
+    "build": "babel sample/src --out-dir sample/dist --source-maps",
+    "build:watch": "babel sample/src --out-dir sample/dist --source-maps --watch",
+    "build:full": "npm link && npm link spet-ui5-jsx-rm && npm run build",
+    "start": "serve sample"
+  },
+  "dependencies": {
+    "babel-code-frame": "^6.22.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-runtime": "^6.18.0",
+    "babel-template": "^6.25.0",
+    "babel-types": "^6.25.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-plugin-tester": "^3.2.2",
+    "babel-preset-env": "^1.5.2",
+    "jest": "^20.0.4",
+    "serve": "^6.0.2"
+  }
+}

@@ -1,0 +1,64 @@
+"use strict";
+
+//eslint-disable-next-line no-unused-vars
+function render(oRm) {
+    (function () {
+        oRm.write("<div ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.write("<span ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.writeEscaped("Words");
+        oRm.write("</span>");
+        oRm.write("<table ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.write("<thead ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.write("<tr ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.write("<th ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.writeEscaped("Column");
+        oRm.write("</th>");
+        oRm.write("</tr>");
+        oRm.write("</thead>");
+        oRm.write("<tbody ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.write("<tr ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.write("<td ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.writeEscaped("Row 1");
+        oRm.write("</td>");
+        oRm.write("</tr>");
+        oRm.write("<tr ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.write("<td ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.writeEscaped("Row 2");
+        oRm.write("</td>");
+        oRm.write("</tr>");
+        oRm.write("<tr ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.write("<td ");
+        oRm.writeClasses();
+        oRm.write(">");
+        oRm.writeEscaped("Row 3");
+        oRm.write("</td>");
+        oRm.write("</tr>");
+        oRm.write("</tbody>");
+        oRm.write("</table>");
+        oRm.write("</div>");
+    })();
+}
