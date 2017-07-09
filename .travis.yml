@@ -1,9 +1,17 @@
 language: node_js
-node_js: "7"
+node_js: '7'
 script:
-  - npm test
-  - npm run build:full
+- npm test
+- npm run build:full
 deploy:
+  - provider: npm
+    skip_cleanup: true
+    email: Serban.Petrescu@outlook.com
+    api_key:
+      secure: RmmK7veEwEYmGzk84IwGal7AVHj+3/dW+VahoFBc9j7N8O34ReWLwpzpnKhmYyZnpAD47wOwzXLec6rAd6yzDYoELdmJ3TOtfr5aDuB4ZD0I/rpN3dtih1M2gKDPJUqxE3zBAHUl+qvXvq7NpaACgz2I1zWzUyLFrjnMGwS8FqsWjHwd5CgOoe57OcrmU/8JUlbn+gH8j1lVRmbcHvuaaHEIdd03A02BghHo4WwQZlgE9CQKLIWQzT6m0xMrpZ3Q5To9o8DMelFVlHVsCJNjkOVGH/gu+h6M0hGKJ1uK/CNvT3Vu/sEgYKl6a1wBZv/gTGqLWPY6YdthMrPONF89o7QxkGm2lEKCkDRSVOz2DVVzG7E0BVkzPETVUr1xNrt99omSey0HS8tPA7ee7czo+3bN+Hown3czhE08tjDJ4r31FSMdvHi5gJlPV7TX8MeLz38LhdAA5A0I9803wXJ9heDuEbcBBPtZyYUtaCVYodhpjznwrYd8mIkRyQMbB5/wRJ/OdewQ/wDDot/TxF2ozky1NLVtk36F4M7ZGOST7v5SCbSNHT1N7e4atexZCXc9meiICmdlAr4EG5xYjwV371ILFBd0DU2xuMqSbVBalOOz7syK5lT+f5RmaJKvHWmObM9yJo1wAg6ffJ6XGr1dVvGN/Axn/PoyQJ/Fs+UM1nw=
+    on:
+      tags: true
+      repo: serban-petrescu/ui5-jsx-rm
   - provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
