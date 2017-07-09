@@ -13,14 +13,14 @@
     "url": "https://github.com/serban-petrescu/ui5-jsx-rm.git"
   },
   "bugs": {
-    "url" : "https://github.com/serban-petrescu/ui5-jsx-rm/issues"
+    "url": "https://github.com/serban-petrescu/ui5-jsx-rm/issues"
   },
   "license": "Apache-2.0",
   "scripts": {
     "test": "jest --coverage",
+    "test:publish": "shx cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
     "build": "babel sample/src --out-dir sample/dist --source-maps",
     "build:watch": "babel sample/src --out-dir sample/dist --source-maps --watch",
-    "build:full": "npm link && npm link spet-ui5-jsx-rm && npm run build",
     "start": "serve sample"
   },
   "dependencies": {
@@ -35,7 +35,9 @@
     "babel-core": "^6.25.0",
     "babel-plugin-tester": "^3.2.2",
     "babel-preset-env": "^1.5.2",
+    "coveralls": "^2.13.1",
     "jest": "^20.0.4",
-    "serve": "^6.0.2"
+    "serve": "^6.0.2",
+    "shx": "^0.2.2"
   }
 }

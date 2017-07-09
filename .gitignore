@@ -2,3 +2,4 @@
 /.vscode
 /sample/dist
 /coverage
+package-lock.json
