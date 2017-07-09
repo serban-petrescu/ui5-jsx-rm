@@ -5,7 +5,8 @@ cache:
     - "node_modules"
 script:
 - npm test
-- npm run build:full
+- npm run build
+- npm run test:publish
 deploy:
   - provider: npm
     skip_cleanup: true
